@@ -6,7 +6,7 @@ class CreateCoursePage(BasePage):
         super().__init__(page)
         #title and create course button
         self.create_course_title = page.get_by_test_id("create-course-toolbar-title-text")
-        self.create_course_button = page.get_by_test_id("create-course-toolbar-title-text")
+        self.create_course_button_1 = page.get_by_test_id("create-course-toolbar-create-course-button")
         #preview
         self.preview_image = page.get_by_test_id("create-course-preview-image-upload-widget-preview-image")
         self.preview_empty_icon = page.get_by_test_id("create-course-preview-empty-view-icon")
@@ -52,20 +52,20 @@ class CreateCoursePage(BasePage):
             "create-course-exercises-empty-view-description-text"
         )
 
-    def check_visible_create_course_title(self):
+    def check_visible_create_course_title_1(self):
         expect(self.create_course_title).to_be_visible()
         expect(self.create_course_title).to_have_text('Create course')
 
-    def click_create_course_button(self):
-        self.create_course_button.click()
+    def click_create_course_button_1(self):
+        self.create_course_button_1.click()
 
-    def check_visible_create_course_button(self):
-        expect(self.create_course_button).to_be_visible()
+    def check_visible_create_course_button_1(self):
+        expect(self.create_course_button_1).to_be_visible()
 
-    def check_disabled_create_course_button(self):
+    def check_disabled_create_course_button_1(self):
         expect(self.create_course_button).to_be_disabled()
 
-    def check_visible_image_preview_empty_view(self):
+    def check_visible_image_preview_empty_view_1(self):
         expect(self.preview_empty_icon).to_be_visible()
 
         expect(self.preview_empty_title).to_be_visible()
@@ -76,7 +76,7 @@ class CreateCoursePage(BasePage):
             'Preview of selected image will be displayed here'
         )
 
-    def check_visible_image_upload_view(self, is_image_uploaded: bool = False):
+    def check_visible_image_upload_view_1(self, is_image_uploaded: bool = False):
         expect(self.preview_image_upload_icon).to_be_visible()
 
         expect(self.preview_image_upload_title).to_be_visible()
@@ -92,16 +92,16 @@ class CreateCoursePage(BasePage):
         if is_image_uploaded:
             expect(self.preview_image_remove_button).to_be_visible()
 
-    def click_remove_image_button(self):
+    def click_remove_image_button_1(self):
         self.preview_image_remove_button.click()
 
-    def check_visible_preview_image(self):
+    def check_visible_preview_image_1(self):
         expect(self.preview_image).to_be_visible()
 
-    def upload_preview_image(self, file: str):
+    def upload_preview_image_1(self, file: str):
         self.preview_image_upload_input.set_input_files(file)
 
-    def check_visible_create_course_form(
+    def check_visible_create_course_form_1(
             self,
             title: str,
             estimated_time: str,
@@ -124,7 +124,7 @@ class CreateCoursePage(BasePage):
         expect(self.create_course_min_score_input).to_be_visible()
         expect(self.create_course_min_score_input).to_have_value(min_score)
 
-    def fill_create_course_form(
+    def fill_create_course_form_1(
             self,
             title: str,
             estimated_time: str,
@@ -147,17 +147,17 @@ class CreateCoursePage(BasePage):
         self.create_course_min_score_input.fill(min_score)
         expect(self.create_course_min_score_input).to_have_value(min_score)
 
-    def check_visible_exercises_title(self):
+    def check_visible_exercises_title_1(self):
         expect(self.exercises_title).to_be_visible()
         expect(self.exercises_title).to_have_text('Exercises')
 
-    def check_visible_create_exercise_button(self):
+    def check_visible_create_exercise_button_1(self):
         expect(self.create_course_button).to_be_visible()
 
-    def click_create_exercise_button(self):
+    def click_create_exercise_button_1(self):
         self.create_course_button.click()
 
-    def check_visible_exercises_empty_view(self):
+    def check_visible_exercises_empty_view_1(self):
         expect(self.exercises_empty_view_icon).to_be_visible()
 
         expect(self.exercises_empty_title_text).to_be_visible()
@@ -168,13 +168,13 @@ class CreateCoursePage(BasePage):
             'Click on "Create exercise" button to create new exercise'
         )
 
-    def click_delete_exercise_button(self, index: int):
+    def click_delete_exercise_button_1(self, index: int):
         delete_exercise_button = self.page.get_by_test_id(
             f"create-course-exercise-{index}-box-toolbar-delete-exercise-button"
         )
         delete_exercise_button.click()
 
-    def check_visible_create_exercise_form(self, index: int, title: str, description: str):
+    def check_visible_create_exercise_form_1(self, index: int, title: str, description: str):
         exercise_subtitle = self.page.get_by_test_id(
             f"create-course-exercise-{index}-box-toolbar-subtitle-text"
         )
@@ -194,7 +194,7 @@ class CreateCoursePage(BasePage):
         expect(exercise_description_input).to_be_visible()
         expect(exercise_description_input).to_have_value(description)
 
-    def fill_create_exercise_form(self, index: int, title: str, description: str):
+    def fill_create_exercise_form_1(self, index: int, title: str, description: str):
         exercise_title_input = self.page.get_by_test_id(
             f"create-course-exercise-form-title-{index}-input"
         )
