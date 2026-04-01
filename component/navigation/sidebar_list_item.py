@@ -2,7 +2,7 @@ from playwright.sync_api import Page, expect
 from component.base_component import BaseComponent
 from typing import Pattern
 
-class Sidebar(BaseComponent):
+class SidebarListItemComponent(BaseComponent):
     def __init__(self, page: Page, identifier: str):
         super().__init__(page)
 
