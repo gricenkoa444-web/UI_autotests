@@ -11,7 +11,10 @@ def test_create_courses(courses_list_page: CoursesListPage, create_course_page: 
     create_course_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create")
     create_course_page.check_visible_create_course_title_1()
     create_course_page.check_visible_create_course_button_1()
-    create_course_page.check_visible_image_preview_empty_view_1()
+    create_course_page.empty_view.check_visible(
+        title='No image selected',
+        description='Preview of selected image will be displayed here'
+    )
     create_course_page.check_visible_image_upload_view_1()
     create_course_page.check_visible_create_course_form_1(
         title="",

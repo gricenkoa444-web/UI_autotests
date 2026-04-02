@@ -1,17 +1,17 @@
+from component.views.empty_view_component import EmptyViewComponent
 from pages.base_page import BasePage
 from playwright.sync_api import Page, expect
 
 class CreateCoursePage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
+
+        self.empty_view = EmptyViewComponent(page, identifier="create-course-preview")
         #title and create course button
         self.create_course_title = page.get_by_test_id("create-course-toolbar-title-text")
         self.create_course_button_1 = page.get_by_test_id("create-course-toolbar-create-course-button")
         #preview
         self.preview_image = page.get_by_test_id("create-course-preview-image-upload-widget-preview-image")
-        self.preview_empty_icon = page.get_by_test_id("create-course-preview-empty-view-icon")
-        self.preview_empty_title = page.get_by_test_id("create-course-preview-empty-view-title-text")
-        self.preview_empty_description = page.get_by_test_id("create-course-preview-empty-view-description-text")
         #upload form
         self.preview_image_upload_icon = page.get_by_test_id("create-course-preview-image-upload-widget-info-icon")
         self.preview_image_upload_title = page.get_by_test_id(
@@ -64,17 +64,6 @@ class CreateCoursePage(BasePage):
 
     def check_disabled_create_course_button_1(self):
         expect(self.create_course_button).to_be_disabled()
-
-    def check_visible_image_preview_empty_view_1(self):
-        expect(self.preview_empty_icon).to_be_visible()
-
-        expect(self.preview_empty_title).to_be_visible()
-        expect(self.preview_empty_title).to_have_text('No image selected')
-
-        expect(self.preview_empty_description).to_be_visible()
-        expect(self.preview_empty_description).to_have_text(
-            'Preview of selected image will be displayed here'
-        )
 
     def check_visible_image_upload_view_1(self, is_image_uploaded: bool = False):
         expect(self.preview_image_upload_icon).to_be_visible()
