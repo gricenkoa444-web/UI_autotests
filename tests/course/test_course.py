@@ -36,7 +36,7 @@ def test_create_courses(courses_list_page: CoursesListPage, create_course_page: 
     )
     create_course_page.click_create_course_button_1()
 
-    courses_list_page.check_visible_course_title()
+    courses_list_page.course_list_toolbar.check_visible_course_title()
     courses_list_page.course_view.check_visible_course_card(
          index=0,
          title="Playwright",
