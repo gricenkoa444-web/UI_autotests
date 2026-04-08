@@ -2,7 +2,7 @@ from playwright.sync_api import Page, expect
 from element. base_element import BaseElement
 
 class FileInput(BaseElement):
-    def set_input_files(self, file: str, **kwargs):
-        locator = self.get_locator(**kwargs)
+    def set_input_files(self, file: str, nth: int = 0, **kwargs):
+        locator = self.get_locator(nth, **kwargs)
         locator.set_input_files(file)
 
