@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1734","test_dashboard_displaying","tests.dashboard","2026-04-08","passed","2026-04-08","","test_dashboard_displaying","",""
+"","1583","test_dashboard_page_visible","tests.dashboard","2026-04-08","passed","2026-04-08","","test_dashboard","",""
+"","1776","test_wrong_email_or_password_alert[user.name@gmail.com-password]","tests.autorization","2026-04-08","passed","2026-04-08","","test_autorization","",""
+"","1673","test_wrong_email_or_password_alert[username@gmail.com- ]","tests.autorization","2026-04-08","passed","2026-04-08","","test_autorization","",""
+"","1714","test_successful_registration[user.name@gmail.com-test_username-password]","tests.registration","2026-04-08","passed","2026-04-08","","test_registration","",""
+"","1495","test_course_list_empty_view","tests.course","2026-04-08","passed","2026-04-08","","test_courses_list_check","",""
+"","2317","test_create_courses","tests.course","2026-04-08","passed","2026-04-08","","test_course","",""
