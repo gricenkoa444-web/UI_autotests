@@ -12,13 +12,13 @@ class CoursesViewMenuComponent(BaseComponent):
         self.delete_item = Button(page, "course-view-delete-menu-item", "Delete menu item")
 
     def click_edit_course(self, index: int):
-        self.menu_button.nth(index).click()
+        self.menu_button.click(nth=index)
 
-        self.edit_item.nth(index).to_be_visible()
-        self.edit_item.nth(index).click()
+        self.edit_item.check_visible(nth=index)
+        self.edit_item.click(nth=index)
 
     def click_delete_course(self, index: int):
-        self.menu_button.nth(index).click()
+        self.menu_button.click(nth=index)
 
-        self.delete_item.nth(index).to_be_visible()
-        self.delete_item.nth(index).click()
+        self.delete_item.check_visible(nth=index)
+        self.delete_item.click(nth=index)
