@@ -7,3 +7,4 @@ class AllureTag(str, Enum):
     SMOKE = "Smoke"
     COURSES = "Courses"
     DASHBOARD = "Dashboard"
+    USER_LOGIN = "User login"

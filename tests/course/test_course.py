@@ -1,4 +1,5 @@
 import pytest
+from allure_commons.types import Severity
 
 from pages.courses.courses_list_page import CoursesListPage
 from pages.courses.create_course_page import CreateCoursePage
@@ -15,6 +16,7 @@ import allure
 @allure.feature(AllureFeature.COURSES)
 @allure.story(AllureStory.COURSES)
 class TestCourses:
+    @allure.severity(Severity.NORMAL)
     def test_create_courses(self, courses_list_page: CoursesListPage, create_course_page: CreateCoursePage):
         create_course_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create")
         create_course_page.create_course_toolbar_view.check_visible()
