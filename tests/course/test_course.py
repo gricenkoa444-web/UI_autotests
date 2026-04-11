@@ -15,6 +15,9 @@ import allure
 @allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.COURSES)
 @allure.story(AllureStory.COURSES)
+@allure.suite(AllureFeature.COURSES)
+@allure.parent_suite(AllureEpic.LMS)
+@allure.sub_suite(AllureStory.COURSES)
 class TestCourses:
     @allure.severity(Severity.NORMAL)
     def test_create_courses(self, courses_list_page: CoursesListPage, create_course_page: CreateCoursePage):

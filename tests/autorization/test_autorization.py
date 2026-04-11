@@ -16,6 +16,9 @@ from allure_commons.types import Severity
 @allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.AUTHENTICATION)
 @allure.story(AllureStory.AUTHORIZATION)
+@allure.suite(AllureFeature.AUTHENTICATION)
+@allure.parent_suite(AllureEpic.LMS)
+@allure.sub_suite(AllureStory.AUTHORIZATION)
 class TestAuthorization:
     @pytest.mark.parametrize(
         "email, password", [

@@ -13,6 +13,9 @@ from allure_commons.types import Severity
 @allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.DASHBOARD)
 @allure.story(AllureStory.DASHBOARD)
+@allure.suite(AllureFeature.DASHBOARD)
+@allure.parent_suite(AllureEpic.LMS)
+@allure.sub_suite(AllureStory.DASHBOARD)
 class TestDashboard:
     @allure.severity(Severity.NORMAL)
     def test_dashboard_page_visible(self, dashboard_page: DashboardPage):
