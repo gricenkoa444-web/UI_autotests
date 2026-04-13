@@ -16,11 +16,12 @@ class CreateCourseExercisesToolbarViewComponent(BaseComponent):
     def check_disabled_button(self):
         self.button.check_disabled()
 
-
+    @allure.step('Check visible title and that it has text "Exercises"')
     def check_visible(self):
         self.title.check_visible()
         self.title.check_have_text('Exercises')
 
+    @allure.step('Check visible create course button')
     def check_visible_button(self):
         self.button.check_visible()
 

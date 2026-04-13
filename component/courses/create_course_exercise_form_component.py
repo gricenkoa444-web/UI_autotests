@@ -8,6 +8,7 @@ class CreateCourseExerciseFormComponent(BaseComponent):
         )
         delete_button.click()
 
+    @allure.step('Check visible exercise form with index: {index}, title: {title} and description: {description}')
     def check_visible(self, index: int, title: str, description: str):
         subtitle = self.page.get_by_test_id(f"create-course-exercise-{index}-box-toolbar-subtitle-text")
         title_input = self.page.get_by_test_id(f"create-course-exercise-form-title-{index}-input")

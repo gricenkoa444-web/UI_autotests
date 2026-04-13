@@ -5,7 +5,7 @@ from element.button import Button
 from element.link import Link
 from element.text import Text
 from pages.base_page import BasePage
-
+import allure
 class LoginPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
@@ -17,6 +17,7 @@ class LoginPage(BasePage):
                                 )
         self.registration_link = Link(page, "login-page-registration-link", "Registration")
 
+    @allure.step('Check visible wrong email or password alert with text: {text}')
     def check_visible_wrong_email_or_password_alert(self, text: str):
         self.wrong_alert.check_visible()
         self.wrong_alert.check_have_text(text)
