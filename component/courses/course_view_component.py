@@ -3,7 +3,7 @@ from component.base_component import BaseComponent
 from component.courses.courses_view_menu_component import CoursesViewMenuComponent
 from element.image import Image
 from element.text import Text
-
+import allure
 
 class CourseViewComponent(BaseComponent):
     def __init__(self, page: Page):
@@ -17,6 +17,7 @@ class CourseViewComponent(BaseComponent):
         self.course_min_score = Text(page, "course-min-score-info-row-view-text", "Min score")
         self.course_estimated_time = Text(page,"course-estimated-time-info-row-view-text", "Estimated")
 
+    @allure.step('Check visible course view at index "{index}"')
     def check_visible_course_card(
             self,
             index: int,

@@ -1,5 +1,5 @@
 from component.base_component import BaseComponent, expect
-
+import allure
 
 class CreateCourseExerciseFormComponent(BaseComponent):
     def click_delete_button(self, index: int):

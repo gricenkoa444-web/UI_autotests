@@ -2,7 +2,7 @@ from playwright.sync_api import Page, expect
 from component.base_component import BaseComponent
 from element.button import Button
 from element.text import Text
-
+import allure
 
 class CreateCourseExercisesToolbarViewComponent(BaseComponent):
     def __init__(self, page: Page):
@@ -15,6 +15,7 @@ class CreateCourseExercisesToolbarViewComponent(BaseComponent):
 
     def check_disabled_button(self):
         self.button.check_disabled()
+
 
     def check_visible(self):
         self.title.check_visible()
