@@ -1,9 +1,11 @@
 import pytest
 from pages.courses.courses_list_page import CoursesListPage
+from tools.routes import AppRoute
+
 
 @pytest.mark.regression
 def test_course_list_empty_view(courses_list_page: CoursesListPage):
-    courses_list_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses")
+    courses_list_page.visit(AppRoute.COURSES)
     courses_list_page.navbar.check_visible(f' test_username')
     courses_list_page.sidebar.check_visible()
     courses_list_page.course_list_toolbar.check_visible_course_title()

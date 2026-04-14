@@ -7,6 +7,9 @@ from tools.allure.stories import AllureStory
 import allure
 from allure_commons.types import Severity
 
+from tools.routes import AppRoute
+
+
 @pytest.mark.regression
 @pytest.mark.dashboard
 @allure.tag(AllureTag.REGRESSION, AllureTag.DASHBOARD)
@@ -19,7 +22,7 @@ from allure_commons.types import Severity
 class TestDashboard:
     @allure.severity(Severity.NORMAL)
     def test_dashboard_page_visible(self, dashboard_page: DashboardPage):
-        dashboard_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard")
+        dashboard_page.visit(AppRoute.DASHBOARD)
         dashboard_page.dashboard_toolbar.check_visible()
         dashboard_page.students_chart_view.check_visible(title="Students")
         dashboard_page.activities_chart_view.check_visible(title="Activities")
